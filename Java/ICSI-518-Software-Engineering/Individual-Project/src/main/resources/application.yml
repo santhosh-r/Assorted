@@ -1,0 +1,38 @@
+# Server configuration
+# Reference: https://drissamri.be/blog/java/enable-https-in-spring-boot/
+# keytool answers: CN=Santhosh Ranganathan, OU=CSI518, O=UAlbany, L=Albany, ST=New York, C=US
+server:
+  port: 8443
+  ssl:
+    key-store: keystore.p12
+    key-store-password: G^f*jUy4ry8J
+    keyStoreType: PKCS12
+    keyAlias: tomcat
+
+# DB configuration
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: create
+      show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+  datasource:
+    url: jdbc:mysql://csi518lab.cu4zoirww6ue.us-east-1.rds.amazonaws.com:3306/assignment2
+    username: root
+    password: Kn*MR%68N*%9
+
+# Security configuration
+security:
+  oauth2:
+    client:
+      clientId: 342291823230652
+      clientSecret: 5b6890e9bc6f24a2a2d2f1c9444b91a2
+      accessTokenUri: https://graph.facebook.com/oauth/access_token
+      userAuthorizationUri: https://www.facebook.com/dialog/oauth
+      tokenName: oauth_token
+      authenticationScheme: query
+      clientAuthenticationScheme: form
+    resource:
+      userInfoUri: https://graph.facebook.com/me

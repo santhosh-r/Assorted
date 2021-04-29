@@ -1,0 +1,3 @@
+matplotlib:
+It comes with many inbuilt functions intended for analysis and visualization.
+It is much slower than either open3d and pyopengl.

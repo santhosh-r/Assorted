@@ -1,0 +1,64 @@
+DFS-Recursion with undirected graph G1 (Vertex List)
+Path returned: ['S', 'D', 'B', 'A', 'C', 'F', 'G'] 
+States expanded: ['S', 'D', 'B', 'A', 'C', 'F', 'G'] 
+
+DFS-Stack with undirected graph G1 (Vertex List)
+Path returned: ['S', 'P', 'Q', 'H', 'E', 'R', 'F', 'G'] 
+States expanded: ['S', 'P', 'Q', 'H', 'E', 'R', 'F', 'G'] 
+
+BFS with undirected graph G1 (Vertex List)
+Path returned: ['S', 'D', 'C', 'F', 'G'] 
+States expanded: ['S', 'D', 'E', 'P', 'B', 'C', 'H', 'R', 'Q', 'A', 'F', 'G'] 
+
+DFS-Recursion with undirected graph G1 (Adjacency Matrix)
+Path returned: ['S', 'D', 'B', 'A', 'C', 'F', 'G'] 
+States expanded: ['S', 'D', 'B', 'A', 'C', 'F', 'G'] 
+
+DFS-Stack with undirected graph G1 (Adjacency Matrix)
+Path returned: ['S', 'P', 'Q', 'H', 'E', 'R', 'F', 'G'] 
+States expanded: ['S', 'P', 'Q', 'H', 'E', 'R', 'F', 'G'] 
+
+BFS with undirected graph G1 (Adjacency Matrix)
+Path returned: ['S', 'D', 'C', 'F', 'G'] 
+States expanded: ['S', 'D', 'E', 'P', 'B', 'C', 'H', 'R', 'Q', 'A', 'F', 'G'] 
+
+DFS-Recursion with directed graph G2 (Vertex List)
+Path returned: ['S', 'D', 'E', 'R', 'F', 'G'] 
+States expanded: ['S', 'D', 'B', 'A', 'C', 'E', 'H', 'P', 'Q', 'R', 'F', 'G'] 
+
+DFS-Stack with directed graph G2 (Vertex List)
+Path returned: ['S', 'E', 'R', 'F', 'G'] 
+States expanded: ['S', 'P', 'Q', 'E', 'R', 'F', 'G'] 
+
+BFS with directed graph G2 (Vertex List)
+Path returned: ['S', 'E', 'R', 'F', 'G'] 
+States expanded: ['S', 'D', 'E', 'P', 'B', 'C', 'H', 'R', 'Q', 'A', 'F', 'G'] 
+
+DFS-Recursion with directed graph G2 (Adjacency Matrix)
+Path returned: ['S', 'D', 'E', 'R', 'F', 'G'] 
+States expanded: ['S', 'D', 'B', 'A', 'C', 'E', 'H', 'P', 'Q', 'R', 'F', 'G'] 
+
+DFS-Stack with directed graph G2 (Adjacency Matrix)
+Path returned: ['S', 'E', 'R', 'F', 'G'] 
+States expanded: ['S', 'P', 'Q', 'E', 'R', 'F', 'G'] 
+
+BFS with directed graph G2 (Adjacency Matrix)
+Path returned: ['S', 'E', 'R', 'F', 'G'] 
+States expanded: ['S', 'D', 'E', 'P', 'B', 'C', 'H', 'R', 'Q', 'A', 'F', 'G'] 
+
+UCS with undirected graph G3 (Vertex List)
+Path returned: ['S', 'D', 'E', 'R', 'F', 'G'] 
+States expanded: ['S', 'P', 'D', 'B', 'E', 'H', 'A', 'R', 'C', 'F', 'Q', 'G'] 
+
+UCS with undirected graph G3 (Adjacency Matrix)
+Path returned: ['S', 'D', 'E', 'R', 'F', 'G'] 
+States expanded: ['S', 'P', 'D', 'B', 'E', 'H', 'A', 'R', 'C', 'F', 'Q', 'G'] 
+
+UCS with directed graph G4 (Vertex List)
+Path returned: ['S', 'D', 'E', 'R', 'F', 'G'] 
+States expanded: ['S', 'P', 'D', 'B', 'E', 'A', 'R', 'F', 'C', 'G'] 
+
+UCS with directed graph G4 (Adjacency Matrix)
+Path returned: ['S', 'D', 'E', 'R', 'F', 'G'] 
+States expanded: ['S', 'P', 'D', 'B', 'E', 'A', 'R', 'F', 'C', 'G'] 
+

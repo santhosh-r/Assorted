@@ -1,0 +1,30 @@
+(py37) PS C:\Users\Santhosh\OneDrive\Personal\College\Fall 2019\Artificial Intelligence\Homework\ualbany-csi535-homework\hw3> python .\hw3_download.py
+Downloading train-images-idx3-ubyte.gz...
+Downloading t10k-images-idx3-ubyte.gz...
+Downloading train-labels-idx1-ubyte.gz...
+Download complete.
+Save complete.
+
+(py37) PS C:\Users\Santhosh\OneDrive\Personal\College\Fall 2019\Artificial Intelligence\Homework\ualbany-csi535-homework\hw3> python .\hw3_view.py
+MNIST train 60000 images
+Train: digit0 has 5923 images
+Train: digit1 has 6742 images
+Train: digit2 has 5958 images
+Train: digit3 has 6131 images
+Train: digit4 has 5842 images
+Train: digit5 has 5421 images
+Train: digit6 has 5918 images
+Train: digit7 has 6265 images
+Train: digit9 has 5949 images
+MNIST test 10000 images
+Test: digit0 has 980 images
+Test: digit1 has 1135 images
+Test: digit2 has 1032 images
+Test: digit3 has 1010 images
+Test: digit4 has 982 images
+Test: digit5 has 892 images
+Test: digit6 has 958 images
+Test: digit7 has 1028 images
+Test: digit8 has 974 images
+Test: digit9 has 1009 images
+

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>NBATrakr: Team Standings</title>
+  <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css"/>
+</head>
+<body>
+  <p th:text="'Hello, ' + ${user.firstName} + '!'"></p>
+  
+  <form th:action="@{/user-save-favorites}" method="POST">
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Rank</th>
+        <th scope="col">Logo</th>
+        <th scope="col">Name</th>
+        <th scope="col">Abbreviation</th>
+        <th scope="col">Favorite</th>
+      </tr>
+    </thead>
+
+    <tbody th:each="t : ${teamStandings}">
+      <tr style="cursor: pointer;" th:data-href="@{~/team?id=} + ${t.team.ID}">
+        <div class="clickable-row">
+        <td th:text="${t.rank}"></td>
+        <td><img width="50px" th:src="'https://cdn.nba.net/assets/logos/teams/secondary/web/' + ${#strings.toUpperCase(t.team.Abbreviation)} + '.png'" /></td>
+        <td th:text="${t.team.City} + ' ' + ${t.team.Name}"></td>
+        <td th:text="${t.team.Abbreviation}"></td>
+        </div>
+        <td>
+          <input name="favorites" class="team-checkbox"
+            th:value="${t.team.ID}" type="checkbox" th:checked="${user.hasFavorite(t.team.ID)}" />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div>
+    <input type="submit" value="Save Favorites" class="btn btn-primary" />
+  </div>
+  </form>
+  
+  <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+  <script>
+    jQuery(document).ready(function($) {
+        $(".clickable-row").click(function() {
+            window.location = $(this).data("href");
+        });
+    });
+  </script>
+</body>
+</html>

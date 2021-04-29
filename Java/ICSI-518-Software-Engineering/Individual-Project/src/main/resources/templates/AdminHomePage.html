@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>NBATrakr: Admin Home</title>
+  <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css"/>
+</head>
+<body>
+  <p th:text="'Hello, Admin ' + ${admin.firstName} + '!'"></p>
+  
+  <form th:action="@{/admin-block}" method="POST">
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Favorite Teams</th>
+        <th scope="col">Facebook ID</th>
+        <th scope="col">Blocked?</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr th:each="user : ${users}">
+        <td th:text="${user.firstName}"></td>
+        <td th:text="${user.lastName}"></td>
+        <td><span th:each="teamId: ${user.favoriteTeams}">
+          <span th:id="'team'+ ${teamId}" th:text="${teamId}"></span>
+        </span></td>
+        <td th:text="${user.facebookId}"></td>
+        <td>
+          <input name="blockIds" class="userblock-checkbox"
+            th:value="${user.id}" type="checkbox" th:checked="${user.blocked}" />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div>
+    <input type="submit" value="Block Selected Users" class="btn btn-primary" />
+  </div>
+  </form>
+  
+  <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+  <script>
+    // $('.userblock-checkbox').click(function() {
+    //     if ($(this).is(':checked')) {
+    //       $(this).attr('name', 'blockIds');
+    //     } else {
+    //       $(this).attr('name', 'unblockIds');              
+    //     }
+    // });
+    // // Unchecked ids are not sumbitted so not useful
+  </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <title>NBATrakr: Login</title>
+  <meta name="description" content=""/>
+  <meta name="viewport" content="width=device-width"/>
+  <base href="/"/>
+  <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css"/>
+  <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <h1>NBATrakr</h1>
+  <div class="container"></div>
+  <div class="container unauthenticated">
+    <div>
+      <a th:href="@{/login}" class="btn btn-primary">Login with Facebook</a>
+    </div>
+  </div>
+  <div class="container authenticated" style="display:none">
+    Logged in as: <span id="user"></span>
+    <p></p>
+    <div>
+      <a th:href="@{/user-home}" class="btn btn-primary">Go to Home</a>
+    </div>
+    <br/>
+    <div>
+      <button onClick="logout()" class="btn btn-primary">Logout</button>
+    </div>
+    <br><a href="/enable-admin">Enable Admin (Log in again)</a>
+    <br><a href="/disable-admin">Disable Admin</a>
+  </div>
+
+  <script type="text/javascript" src="/webjars/js-cookie/js.cookie.js"></script>
+  <script type="text/javascript">
+    $.get("/user", function(data) {
+      $("#user").html(data.userAuthentication.details.name);
+      $(".unauthenticated").hide()
+      $(".authenticated").show()
+    });
+    var logout = function() {
+      $.post("/logout", function() {
+        $("#user").html('');
+        $(".unauthenticated").show();
+        $(".authenticated").hide();
+      })
+      return true;
+    }
+    $.ajaxSetup({
+    beforeSend : function(xhr, settings) {
+    if (settings.type == 'POST' || settings.type == 'PUT'
+        || settings.type == 'DELETE') {
+        if (!(/^http:.*/.test(settings.url) || /^https:.*/
+          .test(settings.url))) {
+        
+          xhr.setRequestHeader("X-XSRF-TOKEN",
+            Cookies.get('XSRF-TOKEN'));
+        }
+      }
+    }
+    });
+  </script>
+</body>
+</html>
